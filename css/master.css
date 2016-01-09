@@ -1,0 +1,17 @@
+/* Turn this on to debug layout */
+body * {
+  /*outline: red 1px dotted;*/
+}
+
+.puppy-card.mdl-card {
+  width:  320px;
+  height: 460px;
+}
+
+.puppy-card .mdl-card__title {
+  padding-bottom: 3px;
+}
+
+.puppy-card .mdl-card__supporting-text {
+  padding-top: 3px;
+}
