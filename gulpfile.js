@@ -33,3 +33,9 @@ gulp.task('build:css', function() {
     .src('./src/**/*.css')
     .pipe(gulp.dest('./public'))
 })
+
+gulp.task('watch', ['default'], function () {
+    gulp.watch('./src/**/*.html', ['build:html'])
+    gulp.watch('./src/css/*.css', ['build:css'])
+    gulp.watch('./src/**/*.js', ['build:js'])
+})
