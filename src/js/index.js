@@ -1,5 +1,6 @@
 // Require all dependent modules here, just like any node.js project.
-var blerg = require('./dependent')
+var liking = require('./liking')
+var $ = require('jquery')
 
 // Invoke them here.
 // We'll probably have things like
@@ -8,8 +9,7 @@ var blerg = require('./dependent')
 //   handleFacebookShare()
 
 // We won't have very much code here, just invocations of functions declared elsewhere.
-
-
-// A little demonstration:
-console.log('It works!!!')
-blerg()
+$(function() {
+  liking.handleLike()
+  liking.handleDisLike()
+})
