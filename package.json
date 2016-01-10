@@ -1,0 +1,22 @@
+{
+  "name": "dander-frontend",
+  "version": "1.0.0",
+  "description": "Front-end client for those of us nipped by puppy love.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DryFlyRyan/dander-frontend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DryFlyRyan/dander-frontend/issues"
+  },
+  "homepage": "https://github.com/DryFlyRyan/dander-frontend#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0"
+  }
+}
