@@ -1,4 +1,5 @@
 var gulp = require('gulp')
+var browserSync = require('browser-sync').create()
 
 gulp.task('default', ['build'])
 
@@ -38,4 +39,13 @@ gulp.task('watch', ['default'], function () {
     gulp.watch('./src/**/*.html', ['build:html'])
     gulp.watch('./src/css/*.css', ['build:css'])
     gulp.watch('./src/**/*.js', ['build:js'])
+})
+
+gulp.task('browser-sync', function() {
+    browserSync.init({
+        server: {
+            baseDir: "./public/"
+        }
+    })
+    gulp.watch("./public/**/*").on('change', browserSync.reload)
 })
