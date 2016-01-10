@@ -1,14 +1,16 @@
 var $ = require('jquery')
 
 function handleLike() {
-  console.log('Handle liking is happening!')
   $('#like').click(function() {
-    console.log('Liked')
+    console.log('Liked!')
+    // Make card bigger, so it can accomodate the shelter info
+    $('.puppy-card.mdl-card').height(580)
+    // Show shelter info
+    $('.shelter-info').show()
   })
 }
 
 function handleDisLike() {
-  console.log('Handle liking is happening!')
   $('#dislike').click(function() {
     console.log('Disliked')
   })
