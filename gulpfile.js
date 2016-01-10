@@ -1,5 +1,6 @@
 var gulp = require('gulp')
 var browserSync = require('browser-sync').create()
+var webpack = require('gulp-webpack')
 
 gulp.task('default', ['build'])
 
@@ -19,7 +20,13 @@ gulp.task('build:html', function() {
 
 gulp.task('build:js', function() {
   return gulp
-    .src('./src/js/main.js')
+    .src('./src/js/*')
+    .pipe(webpack(
+      {
+        output: { filename: './js/main.js' },
+        devtool: '#source-map'
+      }
+    ))
     .pipe(gulp.dest('./public'))
 })
 

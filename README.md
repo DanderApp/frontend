@@ -14,8 +14,14 @@ This will install all dependencies listed in package.json.
 
 Then:
 
-```npm start```
+```gulp watch```
 
-This rebuilds the 'public' folder, which contains the files for the publicly accessible site. It then runs [browser-sync](https://www.npmjs.com/package/browser-sync), which monitors the source files and reloads the browser when anything changes. After running ```npm start``` you should see a link to the locally hosted site in the terminal.
+This watches the source files. Anytime there is a change it rebuilds the contents of the 'public' folder, which contains the files for the publicly accessible site.
 
-To quit browser-sync, hit control-c
+To smooth the development process, open another terminal tab and run:
+
+```gulp browser-sync```
+
+[browser-sync](https://www.npmjs.com/package/browser-sync) reloads the browser when anything changes. It also gives you a link to the locally hosted site, which is kinda nice.
+
+To end the *gulp watch* and *browser-sync*, hit *control-c*
