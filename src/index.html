@@ -10,15 +10,24 @@
     <title>Dander</title>
   </head>
   <body>
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-tabs">
       <header class="mdl-layout__header">
-        <div class="mdl-layout-icon"></div>
         <div class="mdl-layout__header-row">
-          <span class="mdl-layout__title">Dander</span>
+          <!-- Title -->
+          <span class="mdl-layout-title">Dander</span>
           <div class="mdl-layout-spacer"></div>
+          <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="#">Hi, June!</a>
+          </nav>
+        </div>
+        <!-- Tabs -->
+        <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+          <a href="#fixed-tab-1" class="mdl-layout__tab is-active">Looking</a>
+          <a href="#fixed-tab-2" class="mdl-layout__tab">Likes</a>
         </div>
       </header>
       <main class="mdl-grid mdl-layout__content">
+        <section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
           <div class="puppy-card mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col">
             <div class="mdl-card__media">
               <img class= "profile-photo" src="./images/puppy-01.jpeg" width="100%" alt="" style="padding:0px;"/>
@@ -44,6 +53,22 @@
               Address: 1401 Fluff St.
             </div>
           </div>
+        </section>
+        <section class="mdl-layout__tab-panel" id="fixed-tab-2">
+          <div class="page-content">
+            <ul>
+              <li>A</li>
+              <li>list</li>
+              <li>of</li>
+              <li>your</li>
+              <li>liked</li>
+              <li>puppies</li>
+              <li>will</li>
+              <li>go</li>
+              <li>here</li>
+            </ul>
+          </div>
+        </section>
       </main>
     </div>
   </body>
