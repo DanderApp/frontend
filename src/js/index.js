@@ -16,8 +16,9 @@ var getPuppies = fetch(puppyURL)
 // We won't have very much code here, just invocations of functions declared elsewhere.
 $(function() {
   getPuppies
-    .then(function(pets) {
-      console.log(pets)
+    .then(function(data) {
+      var pets = JSON.parse(data)
+      initialize.addPetToPage(pets[1])
     })
     .catch(function(err) {
       console.error('There was an error fetching the pets', err)
