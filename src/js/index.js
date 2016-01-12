@@ -14,11 +14,11 @@ $(function() {
       var pets = JSON.parse(data)
       // initialize the page with the first pet
       initialize(pets[0])
+      liking.handleLike()
+      liking.handleDisLike()
+      liking.handleNext()
     })
     .catch(function(err) {
       console.error('There was an error fetching the pets', err)
     })
-  liking.handleLike()
-  liking.handleDisLike()
-  liking.handleNext()
 })
