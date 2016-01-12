@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.blue_grey-pink.min.css" />
     <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="./css/master.css" media="screen" charset="utf-8">
@@ -10,32 +10,100 @@
     <title>Dander</title>
   </head>
   <body>
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-tabs">
       <header class="mdl-layout__header">
-        <div class="mdl-layout-icon"></div>
         <div class="mdl-layout__header-row">
-          <span class="mdl-layout__title">Dander</span>
+          <!-- Title -->
+          <span class="mdl-layout-title">Dander</span>
           <div class="mdl-layout-spacer"></div>
+          <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="#">Hi, June!</a>
+          </nav>
+        </div>
+        <!-- Tabs -->
+        <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+          <a href="#fixed-tab-1" class="mdl-layout__tab is-active">Looking</a>
+          <a href="#fixed-tab-2" class="mdl-layout__tab">Likes</a>
         </div>
       </header>
       <main class="mdl-grid mdl-layout__content">
+        <section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
           <div class="puppy-card mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col">
             <div class="mdl-card__media">
-              <img src="./images/puppy-01.jpeg" width="100%" alt="" style="padding:0px;"/>
+              <img class= "profile-photo" src="./images/puppy-01.jpeg" width="100%" alt="" style="padding:0px;"/>
             </div>
             <div class="mdl-card__title">
-              <h2 class="mdl-card__title-text">
+              <h2 class="name mdl-card__title-text">
                 Booger
               </h2>
             </div>
-            <div class="mdl-card__supporting-text">
+            <div class="pet-info mdl-card__supporting-text">
               Male | Golden lab
             </div>
             <div class="mdl-card__actions mdl-card--border">
-              <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="#">Poo</a>
-              <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="#">Heart</a>
+              <a id="dislike" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="#">Poo</a>
+              <a id="like"    class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="#">Heart</a>
+            </div>
+            <div class="shelter-info mdl-card__supporting-text mdl-card--border">
+              <hr>
+              Your pup is at Puptown Luvvy Shelter
+              <br>
+              Phone: (303) 333-3333
+              <br>
+              Address: 1401 Fluff St.
             </div>
           </div>
+        </section>
+        <section class="mdl-grid mdl-layout__tab-panel" id="fixed-tab-2">
+          <div class="puppy-card mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col">
+            <div class="mdl-card__media">
+              <img class= "profile-photo" src="./images/puppy-01.jpeg" width="100%" alt="" style="padding:0px;"/>
+            </div>
+            <div class="mdl-card__title">
+              <h2 class="name mdl-card__title-text">
+                Booger
+              </h2>
+            </div>
+            <div class="pet-info mdl-card__supporting-text">
+              Male | Golden lab
+            </div>
+            <div class="mdl-card__actions mdl-card--border">
+              <a id="" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="#">Contact Booger's shelter</a>
+            </div>
+          </div>
+          <div class="puppy-card mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col">
+            <div class="mdl-card__media">
+              <img class= "profile-photo" src="./images/puppy-02.jpeg" width="100%" alt="" style="padding:0px;"/>
+            </div>
+            <div class="mdl-card__title">
+              <h2 class="name mdl-card__title-text">
+                Smuckermutt
+              </h2>
+            </div>
+            <div class="pet-info mdl-card__supporting-text">
+              Female | Mixed breed
+            </div>
+            <div class="mdl-card__actions mdl-card--border">
+              <a id="" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="#">Contact Booger's shelter</a>
+            </div>
+          </div>
+          <div class="puppy-card mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col">
+            <div class="mdl-card__media">
+              <img class= "profile-photo" src="./images/puppy-01.jpeg" width="100%" alt="" style="padding:0px;"/>
+            </div>
+            <div class="mdl-card__title">
+              <h2 class="name mdl-card__title-text">
+                Chiggerzbee
+              </h2>
+            </div>
+            <div class="pet-info mdl-card__supporting-text">
+              Male | Black lab
+            </div>
+            <div class="mdl-card__actions mdl-card--border">
+              <a id="" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="#">Contact Booger's shelter</a>
+            </div>
+          </div>
+        </section>
       </main>
     </div>
   </body>
