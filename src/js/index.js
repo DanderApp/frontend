@@ -18,12 +18,13 @@ $(function() {
   getPuppies
     .then(function(data) {
       var pets = JSON.parse(data)
-      initialize.addPetToPage(pets[1])
+      // initialize the page with the first pet
+      initialize(pets[0])
     })
     .catch(function(err) {
       console.error('There was an error fetching the pets', err)
     })
-  initialize.hideShelterInfo()
   liking.handleLike()
   liking.handleDisLike()
+  liking.handleNext()
 })

@@ -1,17 +1,7 @@
-var $ = require('jquery')
+var display = require('./display')
 
-function hideShelterInfo() {
-  $('.shelter-info').hide()
-}
-
-function addPetToPage(pet) {
-  $('.name').text(pet.name)
-  var infoText = 'Male' + ' | ' + pet.age
-  $('.pet-info').text(infoText)
-  $('.profile-photo').attr('src', pet.photo)
-}
-
-module.exports = {
-  hideShelterInfo: hideShelterInfo,
-  addPetToPage: addPetToPage
+module.exports = function(pet) {
+  display.hideShelterInfo()
+  display.addPetToPage(pet)
+  console.log(pet)
 }
