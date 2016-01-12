@@ -16,7 +16,7 @@ $(function() {
       initialize(pets[0])
       liking.handleLike()
       liking.handleDisLike()
-      liking.handleNext()
+      liking.handleNext(pets)
     })
     .catch(function(err) {
       console.error('There was an error fetching the pets', err)

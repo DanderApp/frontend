@@ -1,4 +1,6 @@
 var $ = require('jquery')
+var display = require('./display')
+var petIndex = require('./counter')
 
 function handleLike() {
   $('#like').click(function() {
@@ -20,9 +22,9 @@ function handleDisLike() {
   })
 }
 
-function handleNext() {
+function handleNext(pets) {
   $('#next').click(function() {
-    displayNextPet()
+    display.addPetToPage(pets[petIndex()])
   })
 }
 
