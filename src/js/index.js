@@ -7,12 +7,6 @@ var fetch = require('./fetch')
 var puppyURL = __dirname + 'fake-data.json'
 var getPuppies = fetch(puppyURL)
 
-// Invoke them here.
-// We'll probably have things like
-//   makeAJAXCall()
-//   handleLikeClick()
-//   handleFacebookShare()
-
 // We won't have very much code here, just invocations of functions declared elsewhere.
 $(function() {
   getPuppies
