@@ -1,7 +1,6 @@
 var $ = require('jquery')
 var display = require('./display')
 var petIndex = require('./counter')
-// var config = require('./config')
 
 function handleLike() {
   $('#like').click(function() {

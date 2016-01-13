@@ -1,5 +1,6 @@
 // Require all dependent modules here, just like any node.js project.
 var liking = require('./liking')
+var likes = require('./likes-list')
 var initialize = require('./initialize')
 var $ = require('jquery')
 var fetch = require('./fetch')
@@ -15,9 +16,14 @@ $(function() {
       var pets = JSON.parse(data)
       // initialize the page with the first pet
       initialize(pets[0])
+
+      // Handle the behavior on the Looking tab
       liking.handleLike()
       liking.handleDisLike()
       liking.handleNext(pets)
+
+      // Handle the behavior on the Likes tab
+      likes.handleDisplayLikes()
     })
     .catch(function(err) {
       console.error('There was an error fetching the pets', err)

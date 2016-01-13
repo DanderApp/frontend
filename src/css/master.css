@@ -7,19 +7,21 @@ body * {
   /*outline: red 1px dotted;*/
 }
 
-.puppy-card.mdl-card {
+/* The "Looking" page is #fixed-tab-1 */
+#fixed-tab-1 .puppy-card.mdl-card {
   width:  320px;
   height: 460px;
 }
 
-.puppy-card .mdl-card__title {
+#fixed-tab-1 .puppy-card .mdl-card__title {
   padding-bottom: 3px;
 }
 
-.puppy-card .mdl-card__supporting-text {
+#fixed-tab-1 .puppy-card .mdl-card__supporting-text {
   padding-top: 3px;
 }
 
+/* The "Liked" page is #fixed-tab-2. */
 /* Wide card for Liked Puppy list */
 #fixed-tab-2 .puppy-card.mdl-card {
   width:  460px;
