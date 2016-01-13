@@ -1,7 +1,7 @@
 var $ = require('jquery')
 
 function handleLogin() {
-  $('#login').click(function(event) {
+  $('.login').click(function(event) {
     var userCredentials = {
       name: 'Zeb',
       password: 'letmein'
@@ -20,12 +20,23 @@ function handleLogin() {
       console.log('Set the user session token, whether or not you successfully logged in. Open up Resources > Session Storage.')
       console.log('In the real world, we\'ll only do this upon successful authentication, of course, but we\'re faking it until the server-side auth is up and running.')
       // Store the user on the session.
-      sessionStorage.setItem('token', JSON.stringify(userCredentials))
+      var tokenWePretendWeGotFromServer = {
+        "iss": "dander.io",
+        "exp": 1300819380,
+        "name": "Chris Sevilleja",
+        "admin": true
+      }
+      sessionStorage.setItem('token', JSON.stringify(tokenWePretendWeGotFromServer))
+      updateName()
     })
   })
 }
 
+function updateName() {
+  var name = JSON.parse(sessionStorage.getItem('token')).name
+  $('.login').text('Hello, ' + name + '!')
+}
+
 $(function() {
-  console.log('See this auth stuffz?')
   handleLogin()
 })
