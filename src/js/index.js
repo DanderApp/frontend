@@ -4,7 +4,7 @@ var initialize = require('./initialize')
 var $ = require('jquery')
 var fetch = require('./fetch')
 
-var puppyURL = __dirname + 'fake-data.json'
+var puppyURL = __dirname + 'fake-data-2.json'
 var getPuppies = fetch(puppyURL)
 
 // We won't have very much code here, just invocations of functions declared elsewhere.
