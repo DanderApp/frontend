@@ -24,6 +24,7 @@ function handleLogin() {
         "iss": "dander.io",
         "exp": 1300819380,
         "name": "Chris Sevilleja",
+        "user_id": "bloogedeeblah",
         "admin": true
       }
       sessionStorage.setItem('token', JSON.stringify(tokenWePretendWeGotFromServer))

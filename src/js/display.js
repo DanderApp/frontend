@@ -21,7 +21,7 @@ function addPetToPage(pet) {
   var infoText = pet.sex + ' | ' + pet.age + ' | ' + pet.size
   $('.pet-info').text(infoText)
   // Until we get the real photos, set the photo here:
-  pet.photo = "http://www.pedigreedatabase.com/uploads/oli/images/Labrador_Retriever_Cream_984334.jpg"
+  pet.photo = pet.photo
   $('.profile-photo').attr('src', pet.photo)
 }
 

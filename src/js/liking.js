@@ -1,6 +1,7 @@
 var $ = require('jquery')
 var display = require('./display')
 var petIndex = require('./counter')
+// var config = require('./config')
 
 function handleLike() {
   $('#like').click(function() {
@@ -30,16 +31,16 @@ function handleNext(pets) {
 
 function saveLike() {
   var currentPet = JSON.parse(sessionStorage.getItem('currentPet'))
-  var name = JSON.parse(sessionStorage.getItem('token')).name
+  var user_id = JSON.parse(sessionStorage.getItem('token')).user_id
   var likeData = {
-    user: name,
+    user_id: user_id,
     petfinder_id: currentPet.petfinder_id,
     liked: true
   }
   console.log('Submitting this data to server to save the Like: ' + JSON.stringify(likeData))
   $.ajax({
     method: "POST",
-    url: "/",
+    url: "http://dander.herokuapp.com/connections/new",
     data: likeData
   })
     .done(function() {
@@ -52,16 +53,16 @@ function saveLike() {
 
 function saveDisLike() {
   var currentPet = JSON.parse(sessionStorage.getItem('currentPet'))
-  var name = JSON.parse(sessionStorage.getItem('token')).name
+  var user_id = JSON.parse(sessionStorage.getItem('token')).user_id
   var likeData = {
-    user: name,
+    user_id: user_id,
     petfinder_id: currentPet.petfinder_id,
     liked: false
   }
   console.log('Submitting this data to server to save the dislike: ' + JSON.stringify(likeData))
   $.ajax({
     method: "POST",
-    url: "/",
+    url: "http://dander.herokuapp.com/connections/new",
     data: likeData
   })
     .done(function(msg) {
