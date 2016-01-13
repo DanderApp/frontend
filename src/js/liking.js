@@ -40,7 +40,7 @@ function saveLike() {
   console.log('Submitting this data to server to save the Like: ' + JSON.stringify(likeData))
   $.ajax({
     method: "POST",
-    url: "http://dander.herokuapp.com/connections/new",
+    url: "https://dander.herokuapp.com/connections/new",
     data: likeData
   })
     .done(function() {
@@ -62,7 +62,7 @@ function saveDisLike() {
   console.log('Submitting this data to server to save the dislike: ' + JSON.stringify(likeData))
   $.ajax({
     method: "POST",
-    url: "http://dander.herokuapp.com/connections/new",
+    url: "https://dander.herokuapp.com/connections/new",
     data: likeData
   })
     .done(function(msg) {
