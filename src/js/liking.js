@@ -30,29 +30,35 @@ function handleNext(pets) {
 
 function saveLike() {
   var currentPet = JSON.parse(sessionStorage.getItem('currentPet'))
+  var name = JSON.parse(sessionStorage.getItem('token')).name
   var likeData = {
+    user: name,
     petfinder_id: currentPet.petfinder_id,
     liked: true
   }
+  console.log('Submitting this data to server to save the Like: ' + JSON.stringify(likeData))
   $.ajax({
     method: "POST",
     url: "/",
     data: likeData
   })
-    .done(function(msg) {
-      console.log('Like saved: ' + msg)
+    .done(function() {
+      console.log('Like saved.')
     })
-    .fail(function(msg) {
-      console.log('Failed to save: ' + msg)
+    .fail(function() {
+      console.log('Failed to save.')
     })
 }
 
 function saveDisLike() {
   var currentPet = JSON.parse(sessionStorage.getItem('currentPet'))
+  var name = JSON.parse(sessionStorage.getItem('token')).name
   var likeData = {
+    user: name,
     petfinder_id: currentPet.petfinder_id,
     liked: false
   }
+  console.log('Submitting this data to server to save the dislike: ' + JSON.stringify(likeData))
   $.ajax({
     method: "POST",
     url: "/",
