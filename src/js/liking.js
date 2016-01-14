@@ -49,10 +49,7 @@ function saveLike() {
   $.ajax({
     method: "POST",
     url: "https://dander.herokuapp.com/connections/new",
-    data: likeData,
-    xhrFields: {
-       withCredentials: true
-    }
+    data: likeData
   })
     .done(function() {
       console.log('Like saved.')
