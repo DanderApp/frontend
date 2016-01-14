@@ -14,7 +14,6 @@ function handleLogin() {
       email: $('#email').val(),
       password: $('#password').val()
     }
-    console.log('Logging in with these credentials: ' + userCredentials)
     $.ajax(
       {
         url: 'https://dander.herokuapp.com/auth/login',
