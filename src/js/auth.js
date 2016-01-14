@@ -30,9 +30,21 @@ function handleLogin() {
   })
 }
 
+function handleLogout() {
+  $('.logout').click(function() {
+    logOut()
+  })
+}
+
 function updateName() {
   var name = getUser().first_name
   $('.user-name').text('Hello, ' + name + '!')
+}
+
+function logOut() {
+  console.log('Logged out')
+  localStorage.token = ''
+  window.location = '/index.html'
 }
 
 $(function() {
@@ -45,4 +57,5 @@ $(function() {
   }
 
   handleLogin()
+  handleLogout()
 })
