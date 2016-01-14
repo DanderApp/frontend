@@ -4,9 +4,7 @@ var petIndex = require('./counter')
 
 function handleLike(pets) {
   $('#like').click(function() {
-    $('.click-feedback').text('Liked!').fadeOut(1000, function() {
-      $('.click-feedback').empty().show()
-    })
+    likeFeedback('Liked!')
     // Note that Pup was liked, in the database or wherever we're storing that
     saveLike()
     // Make card bigger, so it can accomodate the shelter info
@@ -19,6 +17,7 @@ function handleLike(pets) {
 
 function handleDisLike() {
   $('#dislike').click(function() {
+    likeFeedback('Not so much!')
     // Note that Pup was disliked, in the database or wherever we're storing that
     saveDisLike()
     // Display the next pup
@@ -30,6 +29,12 @@ function handleNext(pets) {
   display.addPetToPage(pets[petIndex()])
   // $('#next').click(function() {
   // })
+}
+
+function likeFeedback(feedbackText) {
+  $('.click-feedback').text(feedbackText).fadeOut(1000, function() {
+    $('.click-feedback').empty().show()
+  })
 }
 
 function saveLike() {
