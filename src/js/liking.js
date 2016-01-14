@@ -27,8 +27,8 @@ function displayNextPet(pets) {
 }
 
 function likeFeedback(feedbackText) {
-  $('.click-feedback').text(feedbackText).fadeOut(1000, function() {
-    $('.click-feedback').empty().show()
+  $('.click-feedback').show().text(feedbackText).fadeOut(1000, function() {
+    $('.click-feedback').empty().hide()
   })
 }
 
