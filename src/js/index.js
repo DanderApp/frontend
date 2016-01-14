@@ -6,7 +6,7 @@ var $ = require('jquery')
 var fetch = require('./fetch')
 
 // var puppyURL = __dirname + 'fake-data-2.json'
-var puppyURL = 'https://dander.herokuapp.com/apitest'
+var puppyURL = 'https://dander.herokuapp.com/dogs'
 var getPuppies = fetch(puppyURL)
 
 // We won't have very much code here, just invocations of functions declared elsewhere.
