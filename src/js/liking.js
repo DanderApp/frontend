@@ -4,6 +4,9 @@ var petIndex = require('./counter')
 
 function handleLike(pets) {
   $('#like').click(function() {
+    $('.click-feedback').text('Liked!').fadeOut(1000, function() {
+      $('.click-feedback').empty().show()
+    })
     // Note that Pup was liked, in the database or wherever we're storing that
     saveLike()
     // Make card bigger, so it can accomodate the shelter info
