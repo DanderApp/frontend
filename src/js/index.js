@@ -19,7 +19,7 @@ $(function() {
       initialize(pets[0])
 
       // Handle the behavior on the Looking tab
-      liking.handleLike()
+      liking.handleLike(pets)
       liking.handleDisLike()
       liking.handleNext(pets)
 

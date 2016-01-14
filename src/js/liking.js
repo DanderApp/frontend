@@ -2,14 +2,15 @@ var $ = require('jquery')
 var display = require('./display')
 var petIndex = require('./counter')
 
-function handleLike() {
+function handleLike(pets) {
   $('#like').click(function() {
     // Note that Pup was liked, in the database or wherever we're storing that
     saveLike()
     // Make card bigger, so it can accomodate the shelter info
-    $('.puppy-card.mdl-card').height(550)
+    // $('.puppy-card.mdl-card').height(550)
     // Show shelter info
-    $('.shelter-info').show()
+    // $('.shelter-info').show()
+    handleNext(pets)
   })
 }
 
@@ -23,9 +24,9 @@ function handleDisLike() {
 }
 
 function handleNext(pets) {
-  $('#next').click(function() {
-    display.addPetToPage(pets[petIndex()])
-  })
+  display.addPetToPage(pets[petIndex()])
+  // $('#next').click(function() {
+  // })
 }
 
 function saveLike() {
