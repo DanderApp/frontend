@@ -48,8 +48,19 @@ function addLikedPet() {
   $('#fixed-tab-2 .name').text(pet.name)
 }
 
+function hideSpinner() {
+  $('.mdl-spinner').toggleClass('is-active')
+  $('.spinner').hide()
+}
+
+function showCard() {
+  $('.puppy-card').show()
+}
+
 module.exports = {
   hideShelterInfo: hideShelterInfo,
   addPetToPage: addPetToPage,
-  addLikedPet: addLikedPet
+  addLikedPet: addLikedPet,
+  hideSpinner: hideSpinner,
+  showCard: showCard
 }
