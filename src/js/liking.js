@@ -30,7 +30,12 @@ function handleNext(pets) {
 
 function saveLike() {
   var currentPet = JSON.parse(sessionStorage.getItem('currentPet'))
-  var user_id = JSON.parse(sessionStorage.getItem('token')).user_id
+  var token = sessionStorage.getItem('token')
+  if (token) {
+    var user_id = JSON.parse(token).user_id
+  } else {
+    var user_id = null
+  }
   var likeData = {
     user_id: user_id,
     petfinder_id: currentPet.petfinder_id,
@@ -40,7 +45,10 @@ function saveLike() {
   $.ajax({
     method: "POST",
     url: "https://dander.herokuapp.com/connections/new",
-    data: likeData
+    data: likeData,
+    xhrFields: {
+       withCredentials: true
+    }
   })
     .done(function() {
       console.log('Like saved.')
@@ -52,7 +60,12 @@ function saveLike() {
 
 function saveDisLike() {
   var currentPet = JSON.parse(sessionStorage.getItem('currentPet'))
-  var user_id = JSON.parse(sessionStorage.getItem('token')).user_id
+  var token = sessionStorage.getItem('token')
+  if (token) {
+    var user_id = JSON.parse(token).user_id
+  } else {
+    var user_id = null
+  }
   var likeData = {
     user_id: user_id,
     petfinder_id: currentPet.petfinder_id,

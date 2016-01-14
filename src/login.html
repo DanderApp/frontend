@@ -6,12 +6,73 @@
     <script src="./js/main.js"></script>
   </head>
   <body>
-    <a href="#" class="login">
-      Your name will go here.
-    </a>
+    <h1>Auth test</h1>
+    <a href="/">Home</a>
     <p>
-      THIS IS A TEST LOGIN PAGE. ONCE THIS IS WORKING, WE CAN MOVE THE FUNCTIONALITY ONTO THE MAIN PAGE.
+      A testing ground for authentication.
     </p>
-    <button class="login" type="button" name="button">Login</button>
+    <h2>POST</h2>
+    <p>
+      This login button generates a post request to our server and mocks setting a user token on Session Storage.
+    </p>
+    <button class="login" type="button" name="button">Log in</button>
+    <span class="user-name"></span>
+    <br>
+    <br>
+    <hr>
+    <h2>Social auth</h2>
+    <p>
+      Sends you to our server, which redirects to Facebook to sign in. After signing in at Facebook, user is redirected to dander.herokuapp.com with a token in the url.
+    </p>
+    <p>
+      But this is not the JSON Web Token, it is Facebooks token. Totally different.
+    </p>
+    <p>
+      Getting a "user is not defined" error upon successive attempts.
+    </p>
+    <a href="https://dander.herokuapp.com/auth/facebook">Login with Facebook</a>
+    <br>
+    <br>
+    <br>
+    <hr>
+    <h2>Form auth</h2>
+    <h3>Sign up</h3>
+    <form class="signup-form" action="" method="post">
+      <label for="first-name">First name</label>
+      <input type="text" name="first-name" value="">
+      <br>
+      <br>
+      <label for="last-name">Last name</label>
+      <input type="text" name="last-name" value="">
+      <br>
+      <br>
+      <label for="email">Email</label>
+      <input type="email" name="email" value="">
+      <br>
+      <br>
+      <label for="password">Password</label>
+      <input type="password" name="password" value="">
+      <br>
+      <br>
+      <label for="zipcode">Zip code</label>
+      <input type="text" name="zipcode" value = "" pattern="\d{5}-?(\d{4})?">
+      <br>
+      <br>
+      <input type="submit" name="name" value="Sign up">
+    </form>
+    <br>
+    <br>
+    <h3>Login</h3>
+    <form class="signup-form" action="" method="post">
+      <label for="email">Email</label>
+      <input type="email" name="email" value="">
+      <br>
+      <br>
+      <label for="password">Password</label>
+      <input type="password" name="password" value="">
+      <br>
+      <br>
+      <input type="submit" name="name" value="Sign up">
+    </form>
   </body>
 </html>
