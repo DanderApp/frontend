@@ -20,7 +20,7 @@ $(function() {
 
       // Handle the behavior on the Looking tab
       liking.handleLike(pets)
-      liking.handleDisLike()
+      liking.handleDisLike(pets)
       liking.handleNext(pets)
 
       // Handle the behavior on the Likes tab
