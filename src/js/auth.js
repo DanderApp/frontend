@@ -10,7 +10,11 @@ function handleLogin() {
     $.ajax(
       {
         url: 'https://dander.herokuapp.com/auth/facebook',
-        method: 'get'
+        method: 'get',
+        headers: {
+          'Access-Control-Allow-Origin': true,
+          'Content-Type': 'application/json'
+        }
       }
     ).done(function(response) {
       console.log('Success. Here\'s the response: ' + response)
