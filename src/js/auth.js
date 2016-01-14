@@ -3,15 +3,18 @@ var $ = require('jquery')
 function getUser() {
   if(localStorage.token) {
     return JSON.parse(atob(localStorage.token.split('.')[1])).user;
+  } else {
+    return null
   }
 }
 
 function handleLogin() {
   $('.login').click(function(event) {
     var userCredentials = {
-      email: 'Ryan@LuckyDogDigital.com',
-      password: 'fuck'
+      email: $('#email').val(),
+      password: $('#password').val()
     }
+    console.log('Logging in with these credentials: ' + userCredentials)
     $.ajax(
       {
         url: 'https://dander.herokuapp.com/auth/login',
@@ -24,8 +27,7 @@ function handleLogin() {
       console.log('Here is the user: ' + getUser().first_name)
       updateName()
     }).fail(function(msg) {
-      console.log('Failed to log in ' + msg)
-    }).always(function(data) {
+      console.log('Failed to log in')
     })
   })
 }
@@ -37,14 +39,19 @@ function handleLogout() {
 }
 
 function updateName() {
-  var name = getUser().first_name
-  $('.user-name').text('Hello, ' + name + '!')
+  if (getUser()) {
+    var name = getUser().first_name
+    $('.user-name').text('Hello, ' + name + '!')
+  } else {
+    $('.user-name').empty()
+  }
 }
 
 function logOut() {
   console.log('Logged out')
   localStorage.token = ''
-  window.location = '/index.html'
+  updateName()
+  // window.location = '/index.html'
 }
 
 $(function() {
