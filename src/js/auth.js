@@ -11,7 +11,7 @@ function getUser() {
 function handleLogin() {
   $('.login').click(function(event) {
     var userCredentials = {
-      email: $('#email').val(),
+      email:    $('#email').val(),
       password: $('#password').val()
     }
     $.ajax(
@@ -34,6 +34,30 @@ function handleLogin() {
 function handleLogout() {
   $('.logout').click(function() {
     logOut()
+  })
+}
+
+function handleSignup() {
+  $('.sign-up').click(function() {
+    var userInfo = {
+      first_name: $('.signup-form #first-name').val(),
+      last_name:  $('.signup-form #last-name').val(),
+      email:     $('.signup-form #email').val(),
+      password:  $('.signup-form #password').val(),
+      zipcode:   $('.signup-form #zipcode').val()
+    }
+
+    $.ajax({
+      method: 'post',
+      url: 'https://dander.herokuapp.com/auth/signup',
+      data: userInfo
+    })
+      .done(function(results) {
+        console.log('Sign up successful:', results)
+      })
+      .fail(function() {
+        console.log('Sign up failed.')
+      })
   })
 }
 
@@ -61,7 +85,7 @@ $(function() {
       }
     });
   }
-
   handleLogin()
   handleLogout()
+  handleSignup()
 })
