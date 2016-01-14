@@ -6,7 +6,7 @@ var $ = require('jquery')
 var fetch = require('./fetch')
 
 // var puppyURL = __dirname + 'fake-data-2.json'
-var puppyURL = 'https://dander.herokuapp.com/apitest'
+var puppyURL = 'https://dander.herokuapp.com/apitestz'
 var getPuppies = fetch(puppyURL)
 
 // We won't have very much code here, just invocations of functions declared elsewhere.
@@ -14,6 +14,7 @@ $(function() {
   $('.puppy-card').hide()
   getPuppies
     .then(function(data) {
+      $('.mdl-spinner').toggleClass('is-active')
       $('.puppy-card').show()
       var pets = JSON.parse(data)
       // initialize the page with the first pet

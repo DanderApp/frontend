@@ -39,3 +39,8 @@ body * {
   padding: 10px;
   margin-bottom: 20px;
 }
+
+/* Loading spinner */
+.spinner {
+  padding-top: 200px;
+}
