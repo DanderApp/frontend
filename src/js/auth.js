@@ -2,33 +2,20 @@ var $ = require('jquery')
 
 function handleLogin() {
   $('.login').click(function(event) {
+    console.log('Clicked login.')
     var userCredentials = {
       name: 'Zeb',
       password: 'letmein'
     }
     $.ajax(
       {
-        url: 'https://our.server/authenticate',
-        method: 'post',
-        data: userCredentials
+        url: 'https://dander.herokuapp.com/auth/facebook',
+        method: 'get'
       }
     ).done(function(response) {
       console.log('Success. Here\'s the response: ' + response)
     }).fail(function(msg) {
       console.log('Failed to log in ' + msg)
-    }).always(function(data) {
-      console.log('Set the user session token, whether or not you successfully logged in. Open up Resources > Session Storage.')
-      console.log('In the real world, we\'ll only do this upon successful authentication, of course, but we\'re faking it until the server-side auth is up and running.')
-      // Store the user on the session.
-      var tokenWePretendWeGotFromServer = {
-        "iss": "dander.io",
-        "exp": 1300819380,
-        "name": "Chris Sevilleja",
-        "user_id": "bloogedeeblah",
-        "admin": true
-      }
-      sessionStorage.setItem('token', JSON.stringify(tokenWePretendWeGotFromServer))
-      updateName()
     })
   })
 }
