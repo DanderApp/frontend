@@ -21,6 +21,8 @@ function handleLogin() {
     ).done(function(response) {
       console.log('Success. Here\'s the response: ' + response.token)
       localStorage.setItem('token', response.token)
+      console.log('Here is the user: ' + getUser().first_name)
+      updateName()
     }).fail(function(msg) {
       console.log('Failed to log in ' + msg)
     }).always(function(data) {
@@ -29,7 +31,7 @@ function handleLogin() {
 }
 
 function updateName() {
-  var name = JSON.parse(sessionStorage.getItem('token')).name
+  var name = getUser().first_name
   $('.user-name').text('Hello, ' + name + '!')
 }
 
