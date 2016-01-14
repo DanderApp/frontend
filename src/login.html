@@ -11,30 +11,6 @@
     <p>
       A testing ground for authentication.
     </p>
-    <h2>POST</h2>
-    <p>
-      This login button generates a post request to our server and mocks setting a user token on Session Storage.
-    </p>
-    <button class="login" type="button" name="button">Log in</button>
-    <span class="user-name"></span>
-    <br>
-    <br>
-    <hr>
-    <h2>Social auth</h2>
-    <p>
-      Sends you to our server, which redirects to Facebook to sign in. After signing in at Facebook, user is redirected to dander.herokuapp.com with a token in the url.
-    </p>
-    <p>
-      But this is not the JSON Web Token, it is Facebooks token. Totally different.
-    </p>
-    <p>
-      Getting a "user is not defined" error upon successive attempts.
-    </p>
-    <a href="https://dander.herokuapp.com/auth/facebook">Login with Facebook</a>
-    <br>
-    <br>
-    <br>
-    <hr>
     <h2>Form auth</h2>
     <h3>Sign up</h3>
     <form class="signup-form" action="" method="post">
@@ -63,7 +39,7 @@
     <br>
     <br>
     <h3>Login</h3>
-    <form class="signup-form" action="" method="post">
+    <form class="login-form" action="https://dander.herokuapp.com/auth/login" method="post">
       <label for="email">Email</label>
       <input type="email" name="email" value="">
       <br>
@@ -72,7 +48,9 @@
       <input type="password" name="password" value="">
       <br>
       <br>
-      <input type="submit" name="name" value="Sign up">
+      <input type="submit" name="name" value="Log in">
     </form>
+    <h2>POST login from the script</h2>
+    <button class="login">Click to run the login script</button>
   </body>
 </html>

@@ -5,7 +5,7 @@ function hideShelterInfo() {
 }
 
 function addPetToPage(pet) {
-  console.log(pet)
+  // console.log(pet)
   sessionStorage.setItem("currentPet", JSON.stringify(pet));
   $('.name').text(pet.name)
   if (pet.sex === 'M')

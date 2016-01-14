@@ -5,5 +5,5 @@ module.exports = function(pet) {
   display.showCard()
   display.hideShelterInfo()
   display.addPetToPage(pet)
-  console.log(pet)
+  // console.log(pet)
 }
