@@ -20,6 +20,7 @@ function handleLogin() {
       }
     ).done(function(response) {
       console.log('Success. Here\'s the response: ' + response.token)
+      localStorage.setItem('token', response.token)
     }).fail(function(msg) {
       console.log('Failed to log in ' + msg)
     }).always(function(data) {
