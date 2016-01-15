@@ -5,8 +5,6 @@ var petIndex = require('./counter')
 function getUser() {
   if(localStorage.token) {
     return JSON.parse(atob(localStorage.token.split('.')[1])).user;
-  } else {
-    return null
   }
 }
 
