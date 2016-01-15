@@ -2,6 +2,14 @@ var $ = require('jquery')
 var display = require('./display')
 var petIndex = require('./counter')
 
+function getUser() {
+  if(localStorage.token) {
+    return JSON.parse(atob(localStorage.token.split('.')[1])).user;
+  } else {
+    return null
+  }
+}
+
 function handleLike(pets) {
   $('#like').click(function() {
     likeFeedback('Liked!')
@@ -35,13 +43,9 @@ function likeFeedback(feedbackText) {
 function saveLike() {
   var currentPet = JSON.parse(localStorage.getItem('currentPet'))
   var token = localStorage.getItem('token')
-  if (token) {
-    var user_id = JSON.parse(token).user_id
-  } else {
-    var user_id = null
-  }
+  var user = getUser();
   var likeData = {
-    user_id: user_id,
+    user_id: user.id,
     petfinder_id: currentPet.petfinder_id,
     liked: true
   }
@@ -62,13 +66,9 @@ function saveLike() {
 function saveDisLike() {
   var currentPet = JSON.parse(localStorage.getItem('currentPet'))
   var token = localStorage.getItem('token')
-  if (token) {
-    var user_id = JSON.parse(token).user_id
-  } else {
-    var user_id = null
-  }
+  var user = getUser();
   var likeData = {
-    user_id: user_id,
+    user_id: user.id,
     petfinder_id: currentPet.petfinder_id,
     liked: false
   }
