@@ -23,7 +23,7 @@ function handleLogin() {
       localStorage.setItem('token', response.token)
       console.log('Here is the user: ' + getUser().first_name)
       updateName()
-      // window.location = '/'
+      window.location = '/'
     }).fail(function(msg) {
       console.log('Failed to log in')
     })
@@ -73,7 +73,7 @@ function logOut() {
   console.log('Logged out')
   localStorage.token = ''
   updateName()
-  // window.location = '/'
+  window.location = '/'
 }
 
 $(function() {
