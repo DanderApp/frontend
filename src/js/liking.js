@@ -41,8 +41,7 @@ function likeFeedback(feedbackText) {
 }
 
 function saveLike() {
-  var currentPet = JSON.parse(localStorage.getItem('currentPet'))
-  var token = localStorage.getItem('token')
+  var currentPet = JSON.parse(sessionStorage.getItem('currentPet'))
   var user = getUser();
   var likeData = {
     user_id: user.id,
