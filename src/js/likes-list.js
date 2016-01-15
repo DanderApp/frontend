@@ -7,7 +7,6 @@ function handleDisplayLikes() {
     $.ajax({
       url: 'https://dander.herokuapp.com/connections',
       method: 'get',
-      params: '???'
     })
       .then(function(connectionsData) {
         console.log(connectionsData)
