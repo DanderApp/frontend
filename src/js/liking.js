@@ -33,8 +33,8 @@ function likeFeedback(feedbackText) {
 }
 
 function saveLike() {
-  var currentPet = JSON.parse(sessionStorage.getItem('currentPet'))
-  var token = sessionStorage.getItem('token')
+  var currentPet = JSON.parse(localStorage.getItem('currentPet'))
+  var token = localStorage.getItem('token')
   if (token) {
     var user_id = JSON.parse(token).user_id
   } else {
@@ -60,8 +60,8 @@ function saveLike() {
 }
 
 function saveDisLike() {
-  var currentPet = JSON.parse(sessionStorage.getItem('currentPet'))
-  var token = sessionStorage.getItem('token')
+  var currentPet = JSON.parse(localStorage.getItem('currentPet'))
+  var token = localStorage.getItem('token')
   if (token) {
     var user_id = JSON.parse(token).user_id
   } else {
