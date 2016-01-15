@@ -63,7 +63,7 @@ function saveLike() {
 }
 
 function saveDisLike() {
-  var currentPet = JSON.parse(localStorage.getItem('currentPet'))
+  var currentPet = JSON.parse(sessionStorage.getItem('currentPet'))
   var token = localStorage.getItem('token')
   var user = getUser();
   var likeData = {
