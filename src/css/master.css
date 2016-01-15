@@ -60,7 +60,7 @@ body * {
   display: none; /* Hide it initially */
 }
 
-a {
+.mdl-layout-title a {
   color: #FFF;
   text-decoration: none;
 }

@@ -16,7 +16,7 @@
         }
       }
     </script>
-    <title><a href="/">Dander</a></title>
+    <title>Dander</title>
   </head>
   <body>
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-tabs">
@@ -51,12 +51,13 @@
               <input id="zipcode" class="mdl-textfield__input" type="text" name="zipcode" value ="90210" pattern="\d{5}-?(\d{4})?">
               <label for="zipcode" class="mdl-textfield__label">Zip code</label>
             </div>
-            <button class="sign-up mdl-button mdl-js-button mdl-button--raised mdl-button--accent" type="button" name="sign-up">Sign up</button>
+            <div class="mdl-cell">
+              <button class="sign-up mdl-button mdl-js-button mdl-button--raised mdl-button--accent" type="button" name="sign-up">Sign up</button>
+            </div>
             <br>
             <br>
             <br>
           <h3>Login</h3>
-
             <div class="mdl-textfield mdl-js-textfield">
               <input id= "email" class="mdl-textfield__input" type="email">
               <label for="email" class="mdl-textfield__label">Email</label>
@@ -66,9 +67,9 @@
               <input id= "password" class="mdl-textfield__input" type="password">
               <label for="password" class="mdl-textfield__label">Password</label>
             </div>
-            <button class="login mdl-button mdl-js-button mdl-button--raised mdl-button--accent" name="login">
-              Log in
-            </button>
+            <div class="mdl-cell">
+              <button class="login mdl-button mdl-js-button mdl-button--raised mdl-button--accent" name="login">Log in</button>
+            </div>
         </section>
         <section id="for-logged-in" class="mdl-cell">
           <h3>Hello, <span class="user-name"></span></h3>
